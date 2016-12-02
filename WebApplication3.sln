@@ -1,0 +1,27 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.25928.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{C87E33A0-0C84-485A-A60B-1655D39FCD43}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApplication3", "src\WebApplication3\WebApplication3.csproj", "{50174E0A-7B34-4073-AF59-05024EBFCD70}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{50174E0A-7B34-4073-AF59-05024EBFCD70}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{50174E0A-7B34-4073-AF59-05024EBFCD70}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{50174E0A-7B34-4073-AF59-05024EBFCD70}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{50174E0A-7B34-4073-AF59-05024EBFCD70}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{50174E0A-7B34-4073-AF59-05024EBFCD70} = {C87E33A0-0C84-485A-A60B-1655D39FCD43}
+	EndGlobalSection
+EndGlobal

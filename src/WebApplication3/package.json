@@ -1,0 +1,12 @@
+{
+  "name": "asp.net",
+  "version": "0.0.0",
+  "private": true,
+  "devDependencies": {
+    "webpack": "^1.13.3",
+    "aspnet-prerendering": "^2.0.2",
+    "aspnet-webpack": "^1.0.25",
+    "webpack-hot-middleware": "^2.13.2",
+    "aspnet-webpack-react": "^1.0.3"
+  }
+}
