@@ -79,7 +79,11 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="ClientApp\dist\" />
+    <Folder Include="ClientApp\dist\" />
     <Folder Include="wwwroot\" />
+    <Folder Include="wwwroot\dist\" />
+    <Folder Include="wwwroot\dist\" />
+    <Folder Include="wwwroot\dist\" />
     <Folder Include="wwwroot\dist\" />
     <Folder Include="wwwroot\dist\" />
     <Folder Include="wwwroot\dist\" />

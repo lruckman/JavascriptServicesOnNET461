@@ -2,7 +2,10 @@
   "name": "asp.net",
   "version": "0.0.0",
   "private": true,
-  "devDependencies": {},
+  "devDependencies": {
+    "css-loader": "^0.26.1",
+    "style-loader": "^0.13.1"
+  },
   "dependencies": {
     "aspnet-prerendering": "^2.0.2",
     "aspnet-webpack": "^1.0.25",
@@ -14,6 +17,7 @@
     "extract-text-webpack-plugin": "^1.0.1",
     "react": "^15.3.2",
     "react-dom": "^15.3.2",
+    "react-select": "^1.0.0-rc.2",
     "ts-loader": "^1.2.2",
     "typescript": "^2.0.10",
     "webpack": "^1.13.3",

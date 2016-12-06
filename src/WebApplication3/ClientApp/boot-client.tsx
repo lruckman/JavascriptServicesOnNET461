@@ -1,5 +1,5 @@
 ﻿import * as React from 'react';
 import * as ReactDOM from 'react-dom';
-import { HelloMessage } from './react-app';
+import { SearchForm } from './react-app';
 
-ReactDOM.render(<HelloMessage message="Something" />, document.getElementById('my-spa'));
+ReactDOM.render(<SearchForm />, document.getElementById('my-spa'));

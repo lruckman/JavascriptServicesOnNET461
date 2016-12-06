@@ -2,6 +2,8 @@
 var webpack = require('webpack');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 
+var extractCSS = new ExtractTextPlugin('vendor.bundle.css');
+
 var clientBundleConfig = {
     devtool: 'inline-source-map',
     resolve: {
@@ -11,7 +13,7 @@ var clientBundleConfig = {
         loaders: [
             { test: /\.tsx$/, include: /ClientApp/, exclude: /node_modules/, loader: 'babel-loader' },
             /*{ test: /\.ts(x?)$/, include: /ClientApp/, exclude: /node_modules/, loader: 'ts-loader?silent' },*/
-            { test: /\.css$/, loader: ExtractTextPlugin.extract('style-loader', 'css-loader') },
+            { test: /\.css$/, loader: extractCSS.extract(['css-loader']) },
             { test: /\.(png|woff|woff2|eot|ttf|svg)$/, loader: 'url-loader?limit=100000' }
         ]
     },
@@ -19,7 +21,10 @@ var clientBundleConfig = {
         main: ['./ClientApp/boot-client.tsx'],
         vendor: [
             'react',
-            'react-dom'
+            'react-dom',
+            'classnames',
+            'react-select',
+            'react-select/dist/react-select.css'
         ]
     },
     output: {
@@ -28,8 +33,8 @@ var clientBundleConfig = {
         publicPath: '/dist/'
     },
     plugins: [
+        extractCSS,
         new webpack.optimize.OccurenceOrderPlugin(),
-        new ExtractTextPlugin('main.css'),
         new webpack.optimize.CommonsChunkPlugin('vendor', 'vendor.bundle.js') // Moves vendor content out of other bundles
     ]
 };
