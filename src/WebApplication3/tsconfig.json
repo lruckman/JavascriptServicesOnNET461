@@ -4,9 +4,11 @@
     "target": "es6",
     "jsx": "preserve",
     "sourceMap": true,
+    "lib": [ "es6", "dom" ],
     "experimentalDecorators": true
   },
   "exclude": [
-      "node_modules"
+    "bin",
+    "node_modules"
   ]
 }

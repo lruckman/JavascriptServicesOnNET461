@@ -261,3 +261,4 @@ __pycache__/
 *.pyc
 /src/WebApplication3/ClientApp/dist/
 /src/WebApplication3/wwwroot/dist/
+/src/WebApplication3/typings

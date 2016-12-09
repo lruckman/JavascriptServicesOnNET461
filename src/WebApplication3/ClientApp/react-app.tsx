@@ -2,18 +2,27 @@ import * as React from 'react';
 import ReactSelect from 'react-select';
 import { styles } from 'react-select';
 
-class BaseComponent extends React.Component {
-    _bind(...methods) {
-        methods.forEach((method) => this[method] = this[method].bind(this));
-    }
+interface Library {
+    Text: string;
+    Value: string;
 }
 
-export class SearchForm extends BaseComponent {
+interface ISearchFormProp {
+    onSearchSubmit?: (q: string, libraryIds: Array<number>)=>void,
+    libraries?: Library[]
+}
 
-    constructor(props) {
+interface ISearchFormState {
+    libraryIds: number[]
+}
+
+export class SearchForm extends React.Component<ISearchFormProp, ISearchFormState> {
+
+    constructor(props: ISearchFormProp) {
         super(props);
 
-        this._bind('searchHandleKeyUp', 'libraryHandleSelectChange');
+        this.searchHandleKeyUp = this.searchHandleKeyUp.bind(this);
+        this.libraryHandleSelectChange = this.libraryHandleSelectChange.bind(this);
 
         this.state = {
             libraryIds: []
@@ -75,12 +84,6 @@ export class SearchForm extends BaseComponent {
 }
 
 SearchForm.defaultProps = {
+    onSearchSubmit: () => { },
     libraries: []
-}
-
-SearchForm.propTypes = {
-    libraries: React.PropTypes.arrayOf(React.PropTypes.shape({
-        Text: React.PropTypes.string.isRequired,
-        Value: React.PropTypes.string.isRequired,
-    }))
 }
