@@ -1,6 +1,5 @@
 import * as React from 'react';
-import ReactSelect from 'react-select';
-import { styles } from 'react-select';
+import Select from 'react-select';
 
 interface Library {
     Text: string;
@@ -8,7 +7,7 @@ interface Library {
 }
 
 interface ISearchFormProp {
-    onSearchSubmit?: (q: string, libraryIds: Array<number>)=>void,
+    onSearchSubmit?: (q: string, libraryIds: Array<number>) => void,
     libraries?: Library[]
 }
 
@@ -16,10 +15,16 @@ interface ISearchFormState {
     libraryIds: number[]
 }
 
-export class SearchForm extends React.Component<ISearchFormProp, ISearchFormState> {
+export default class SearchForm extends React.Component<ISearchFormProp, ISearchFormState> {
 
-    constructor(props: ISearchFormProp) {
-        super(props);
+    timer: any;
+
+    refs: { search: (HTMLInputElement) }
+
+    static defaultProps: ISearchFormProp;
+
+    constructor() {
+        super();
 
         this.searchHandleKeyUp = this.searchHandleKeyUp.bind(this);
         this.libraryHandleSelectChange = this.libraryHandleSelectChange.bind(this);
@@ -28,13 +33,13 @@ export class SearchForm extends React.Component<ISearchFormProp, ISearchFormStat
             libraryIds: []
         };
     }
-
+    
     search(q, libraryIds) {
         this.props.onSearchSubmit(q, libraryIds || []);
     }
 
     searchHandleKeyUp(e) {
-        clearTimeout(this.timer);
+        clearTimeout(this.timer = null);
 
         this.timer = setTimeout(function () {
             var q = this.refs.search.value.trim();
@@ -55,8 +60,7 @@ export class SearchForm extends React.Component<ISearchFormProp, ISearchFormStat
     }
 
     render() {
-        return (
-            <form className="search-form">
+        return <form className="search-form">
                 <div className="form-group search">
                     <i className="fa fa-search"></i>
                     <input
@@ -68,7 +72,7 @@ export class SearchForm extends React.Component<ISearchFormProp, ISearchFormStat
                 </div>
                 <div className="form-group">
                     <label htmlFor="">Filter by libraries</label>
-                    <ReactSelect
+                    <Select
                         multi
                         value={this.state.libraryIds}
                         valueKey="Value"
@@ -78,8 +82,7 @@ export class SearchForm extends React.Component<ISearchFormProp, ISearchFormStat
                         placeholder="All libraries"
                         onChange={this.libraryHandleSelectChange} />
                 </div>
-            </form>
-        );
+            </form>;
     }
 }
 
