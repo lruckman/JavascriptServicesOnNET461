@@ -1,14 +1,10 @@
 import * as React from 'react';
 import Select from 'react-select';
-
-interface Library {
-    Text: string;
-    Value: string;
-}
+import { ILibraryListItem } from './ILibraryListItem';
 
 interface ISearchFormProp {
     onSearchSubmit?: (q: string, libraryIds: Array<number>) => void,
-    libraries?: Library[]
+    libraries?: ILibraryListItem[]
 }
 
 interface ISearchFormState {

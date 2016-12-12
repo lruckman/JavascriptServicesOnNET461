@@ -16,7 +16,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="ClientApp\boot-client.tsx" />
-    <Content Include="ClientApp\react-app.tsx" />
+    <Content Include="ClientApp\DocumentEdit.tsx" />
+    <Content Include="ClientApp\SearchForm.tsx" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System.ComponentModel.DataAnnotations" />
@@ -93,9 +94,16 @@
   <ItemGroup>
     <None Include=".babelrc" />
     <None Include="app.config" />
+    <None Include="ClientApp\App.tsx" />
     <None Include="ClientApp\boot-client.tsx" />
     <None Include="ClientApp\boot-server.tsx" />
-    <None Include="ClientApp\react-app.tsx" />
+    <None Include="ClientApp\IDocumentDetails.tsx" />
+    <None Include="ClientApp\ILibraryListItem.tsx" />
+    <None Include="ClientApp\IModelError.tsx" />
+    <None Include="ClientApp\ResultList.tsx" />
+    <None Include="ClientApp\ValidationSummary.tsx" />
+    <None Include="ClientApp\DocumentProperties.tsx" />
+    <None Include="ClientApp\SearchForm.tsx" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

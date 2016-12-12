@@ -12,19 +12,24 @@ var clientBundleConfig = {
     module: {
         loaders: [
             { test: /\.tsx$/, include: /ClientApp/, exclude: /node_modules/, loader: 'babel-loader' },
-            /*{ test: /\.ts(x?)$/, include: /ClientApp/, exclude: /node_modules/, loader: 'ts-loader?silent' },*/
-            { test: /\.css$/, loader: extractCSS.extract(['css-loader']) },
+            { test: /\.ts$/, include: /ClientApp/, exclude: /node_modules/, loader: 'ts-loader?silent' },
+            { test: /\.css$/, loader: extractCSS.extract(['css']) },
             { test: /\.(png|woff|woff2|eot|ttf|svg)$/, loader: 'url-loader?limit=100000' }
         ]
     },
     entry: {
         main: ['./ClientApp/boot-client.tsx'],
         vendor: [
-            'react',
-            'react-dom',
+            'aspnet-prerendering',
             'classnames',
+            'react',
+            'react-addons-css-transition-group',
+            'react-addons-update',
+            'react-bootstrap',
+            'react-dom',
+            'react-file-drop',
             'react-select',
-            'react-select/dist/react-select.css'
+            'moment'
         ]
     },
     output: {
@@ -58,7 +63,7 @@ var serverBundleConfig  = {
         publicPath: '/dist/', 
         libraryTarget: 'commonjs'
     },
-    plugins: [] // Don't bundle .js files from node_modules
+    plugins: []
 };
 
 module.exports = [clientBundleConfig, serverBundleConfig];

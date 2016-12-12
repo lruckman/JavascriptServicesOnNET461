@@ -1,5 +1,5 @@
 ﻿import * as React from 'react';
 import * as ReactDOM from 'react-dom';
-import SearchForm from './react-app';
+import App from './app';
 
-ReactDOM.render(<SearchForm />, document.getElementById('my-spa'));
+ReactDOM.render(<App />, document.getElementById('my-spa'));
