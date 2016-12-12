@@ -1,9 +1,10 @@
 import * as React from 'react';
 import classNames from 'classnames';
-import DocumentProperties, { IDocument } from './DocumentProperties';
+import DocumentProperties from './DocumentProperties';
 import DocumentEdit from './DocumentEdit';
 import ResultList, { IResult } from './ResultList';
 import SearchForm from './SearchForm';
+import { IDocumentDetails } from "./IDocumentDetails";
 import { ILibraryListItem } from './ILibraryListItem';
 
 interface ISearchResponse {
@@ -17,7 +18,7 @@ interface IAppProp {
 }
 
 interface IAppState {
-    selectedDocument: IDocument;
+    selectedDocument: IDocumentDetails;
     editDocument?: string;
     data: ISearchResponse;
 }
