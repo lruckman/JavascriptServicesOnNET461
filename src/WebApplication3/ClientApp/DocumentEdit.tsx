@@ -272,10 +272,12 @@ export default class DocumentEdit extends React.Component<IDocumentEditProp, IDo
 
         this.setState({ document: document });
     }
-    
     render() {
-        return <div>
-            <FileDrop
+
+        var fileDrop;
+        
+        if (typeof (window) !== 'undefined') {
+            fileDrop = <FileDrop
                 frame={window}
                 onDrop={this.handleFileDrop}>
                 <div className="inner">
@@ -286,7 +288,11 @@ export default class DocumentEdit extends React.Component<IDocumentEditProp, IDo
                     </div>
                     <h4>Drop to index your files</h4>
                 </div>
-            </FileDrop>
+            </FileDrop>;
+        }
+
+        return <div>
+            {fileDrop}
             <Modal
                 backdrop="static"
                 bsSize="sm"
